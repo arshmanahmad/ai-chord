@@ -1,0 +1,153 @@
+@keyframes slow-motion {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.slow-motion-video {
+    animation: slow-motion 10s infinite alternate;
+}
+
+
+/* audioStyles.css */
+
+.audio-wave-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 20px 0;
+}
+
+.audio-wave {
+    width: 4px;
+    height: 20px;
+    background-color: #fff;
+    animation: audioWave 1.2s infinite ease-in-out;
+}
+
+.audio-wave:nth-child(2) {
+    animation-delay: -1.1s;
+}
+
+.audio-wave:nth-child(3) {
+    animation-delay: -1s;
+}
+
+.audio-wave:nth-child(4) {
+    animation-delay: -0.9s;
+}
+
+.audio-wave:nth-child(5) {
+    animation-delay: -0.8s;
+}
+
+@keyframes audioWave {
+
+    0%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(2);
+    }
+}
+
+.bg-dark {
+    background-color: #2d2d2d;
+}
+
+.bg-light {
+    background-color: #f5f5f5;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.rounded-full {
+    border-radius: 50%;
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+
+
+/* animations.css */
+
+@keyframes fadeInOut {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.fade-in-out {
+    animation: fadeInOut 2s ease-in-out infinite;
+}
+
+
+
+.audio-wave-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 80px;
+    /* Adjust width as needed */
+    height: 40px;
+    /* Adjust height as needed */
+}
+
+.audio-wave {
+    width: 6px;
+    /* Narrower for a sleek look */
+    height: 100%;
+    background: #ccc;
+    /* Light grey color */
+    border-radius: 3px;
+    /* Rounded edges for a subtle look */
+    animation: wave 1.2s infinite ease-in-out;
+}
+
+.audio-wave:nth-child(1) {
+    animation-delay: -1.2s;
+}
+
+.audio-wave:nth-child(2) {
+    animation-delay: -1s;
+}
+
+.audio-wave:nth-child(3) {
+    animation-delay: -0.8s;
+}
+
+.audio-wave:nth-child(4) {
+    animation-delay: -0.6s;
+}
+
+.audio-wave:nth-child(5) {
+    animation-delay: -0.4s;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: scaleY(0.5);
+    }
+
+    50% {
+        transform: scaleY(1.2);
+    }
+}
