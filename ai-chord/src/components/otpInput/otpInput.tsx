@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import CusomizedButton from '../button/button';
 
 interface OtpInputProps {
@@ -14,6 +14,8 @@ const OtpInput: React.FC<OtpInputProps> = ({
     onVerify,
     onResendOtp
 }) => {
+    const [otp, setOtp] = useState(""); // Keep track of the OTP value
+    const inputRefs = useRef([]); 
     const [time, setTime] = useState<number>(initialTime);
 
     useEffect(() => {
@@ -26,12 +28,30 @@ const OtpInput: React.FC<OtpInputProps> = ({
         return () => clearTimeout(timer);
     }, [time]);
 
+    
+    const handleChange = (e:any,index:number) =>{
+        const value = e.target.value;
+        setOtp((prev)=>{
+            const newOtp = prev.split("");
+            newOtp[index]= value
+            return newOtp.join("")
+        })
+    }
+    useEffect(()=>{
+            const filledInputLength = otp.length;
+            if(inputRefs.current[filledInputLength]){
+                inputRefs.current[filledInputLength]?.focus();
+            }
+    },[otp])
     return (
         <div className="flex flex-col gap-2 items-center">
             <div className="w-full h-[5rem] flex gap-4 items-center justify-center">
                 {Array(numInputs).fill("").map((_, index) => (
                     <div key={index} className="md:h-full mt-[2rem] md:w-full w-11 h-11 border border-gray-300 rounded-[1.2rem] flex items-center justify-center">
                         <input
+                            value={otp[index] || ""}
+                            onChange={(e)=> handleChange(e,index)}
+                            ref={(el)=> (inputRefs.current[index] = el)}
                             maxLength={1}
                             type="text"
                             className="w-full h-full bg-transparent text-center outline-none text-xl font-semibold text-gray-700"
