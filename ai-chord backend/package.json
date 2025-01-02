@@ -1,0 +1,24 @@
+{
+  "name":"ai-chord",
+  "description":"An express typescript backend for ai-chord",
+  "version":"1.0.11",
+  "author":"Arshman",
+  "main":"server.ts",
+  "private":true,
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  },
+  "scripts": {
+    "start": "node src/server.ts",
+    "dev": "nodemon src/server.ts"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0"
+  }
+}
