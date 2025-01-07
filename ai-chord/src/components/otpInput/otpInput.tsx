@@ -18,16 +18,7 @@ const OtpInput: React.FC<OtpInputProps> = ({
     const inputRefs = useRef([]); 
     const [time, setTime] = useState<number>(initialTime);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            if (time > 0) {
-                setTime(time - 1);
-            }
-        }, 1000);
-
-        return () => clearTimeout(timer);
-    }, [time]);
-
+    
     
     const handleChange = (e:any,index:number) =>{
         const value = e.target.value;
@@ -38,12 +29,22 @@ const OtpInput: React.FC<OtpInputProps> = ({
         })
     }
     useEffect(()=>{
-            const filledInputLength  = otp.length;
-            if(inputRefs.current[filledInputLength]){
+        const filledInputLength  = otp.length;
+        if(inputRefs.current[filledInputLength]){
                 inputRefs.current[filledInputLength]?.focus();
             }
-    },[otp])
-    return (
+        },[otp])
+        
+        useEffect(() => {
+            const timer = setTimeout(() => {
+                if (time > 0) {
+                    setTime(time - 1);
+                }
+            }, 1000);
+    
+            return () => clearTimeout(timer);
+        }, [time]);
+        return (
         <div className="flex flex-col gap-2 items-center">
             <div className="w-full h-[5rem] flex gap-4 items-center justify-center">
                 {Array(numInputs).fill("").map((_, index) => (
