@@ -2,23 +2,22 @@ import { useEffect, useRef, useState } from 'react';
 import CusomizedButton from '../button/button';
 
 interface OtpInputProps {
-    numInputs?: number;           // Number of OTP input fields (default is 4)
-    initialTime?: number;         // Initial countdown time (default is 30 seconds)
-    onVerify?: () => void;        // Callback function for when the verify button is clicked
-    onResendOtp?: () => void;     // Callback function for when the Resend OTP link is clicked
+    numInputs?: number;           
+    initialTime?: number;       
+    onVerify?: () => void;        
+    onResendOtp?: () => void;   
 }
 
 const OtpInput: React.FC<OtpInputProps> = ({
-    numInputs = 4,                // Default to 4 input fields if not provided
-    initialTime = 30,             // Default to 30 seconds if not provided
+    numInputs = 4,                
+    initialTime = 30,           
     onVerify,
     onResendOtp
 }) => {
-    const [otp, setOtp] = useState(""); // Keep track of the OTP value
+
+    const [otp, setOtp] = useState(""); 
     const inputRefs = useRef([]); 
     const [time, setTime] = useState<number>(initialTime);
-
-    
     
     const handleChange = (e:any,index:number) =>{
         const value = e.target.value;
@@ -28,6 +27,7 @@ const OtpInput: React.FC<OtpInputProps> = ({
             return newOtp.join("")
         })
     }
+
     useEffect(()=>{
         const filledInputLength  = otp.length;
         if(inputRefs.current[filledInputLength]){
@@ -44,6 +44,7 @@ const OtpInput: React.FC<OtpInputProps> = ({
     
             return () => clearTimeout(timer);
         }, [time]);
+
         return (
         <div className="flex flex-col gap-2 items-center">
             <div className="w-full h-[5rem] flex gap-4 items-center justify-center">
