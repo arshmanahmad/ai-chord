@@ -16,7 +16,7 @@ const OtpInput: React.FC<OtpInputProps> = ({
 }) => {
 
     const [otp, setOtp] = useState(""); 
-    const inputRefs = useRef([]); 
+    const inputRefs = useRef<(HTMLInputElement | null)[]>([]); 
     const [time, setTime] = useState<number>(initialTime);
     
     const handleChange = (e:any,index:number) =>{
