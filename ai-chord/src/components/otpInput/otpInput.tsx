@@ -32,6 +32,7 @@ const OtpInput: React.FC<OtpInputProps> = ({
 
     useEffect(()=>{
         
+        
         const filledInputLength  = otp.length;
         if(inputRefs.current[filledInputLength]){
                 inputRefs.current[filledInputLength]?.focus();
