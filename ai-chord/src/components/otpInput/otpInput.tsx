@@ -55,12 +55,12 @@ const OtpInput: React.FC<OtpInputProps> = ({
                             ref={(el)=> (inputRefs.current[index] = el)}
                             maxLength={1}
                             type="text"
-                            className="w-full  s h-full bg-transparent text-center outline-none text-xl font-semibold text-gray-700"
+                            className="w-full  h-full bg-transparent text-center outline-none text-xl font-semibold text-gray-700"
                         />
                     </div>
                 ))}
             </div>
-            <div className='mt-[3rem] w-[90%]'>
+            <div classNadd ame='mt-[3rem] w-[90%]'>
                 <CusomizedButton
                     text="Verify"
                     icon={""}
