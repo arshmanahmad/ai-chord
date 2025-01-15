@@ -28,11 +28,7 @@ const OtpInput: React.FC<OtpInputProps> = ({
         })
     }
 
-    
-
     useEffect(()=>{
-        
-        
         const filledInputLength  = otp.length;
         if(inputRefs.current[filledInputLength]){
                 inputRefs.current[filledInputLength]?.focus();
@@ -45,7 +41,6 @@ const OtpInput: React.FC<OtpInputProps> = ({
                     setTime(time - 1);
                 }
             }, 1000);
-    
             return () => clearTimeout(timer);
         }, [time]);
 
@@ -60,7 +55,7 @@ const OtpInput: React.FC<OtpInputProps> = ({
                             ref={(el)=> (inputRefs.current[index] = el)}
                             maxLength={1}
                             type="text"
-                            className="w-full h-full bg-transparent text-center outline-none text-xl font-semibold text-gray-700"
+                            className="w-full  s h-full bg-transparent text-center outline-none text-xl font-semibold text-gray-700"
                         />
                     </div>
                 ))}
