@@ -60,7 +60,7 @@ const OtpInput: React.FC<OtpInputProps> = ({
                     </div>
                 ))}
             </div>
-            <div classNadd ame='mt-[3rem] w-[90%]'>
+            <div className='mt-[3rem] w-[90%]'>
                 <CusomizedButton
                     text="Verify"
                     icon={""}
