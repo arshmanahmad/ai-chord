@@ -57,6 +57,7 @@ const Sidebar: React.FC<sidebarProps> = ({
                             textColor="#fff"
                             onClick={() => handleAddChat({ newChatKey: "New Chat" })}
                         />
+                     
                     </div>
                     <div className="w-full flex flex-col justify-between h-[6%] mt-[1.5rem]">
                         <div className="w-full h-[1px] bg-[#f6f6f6]" />

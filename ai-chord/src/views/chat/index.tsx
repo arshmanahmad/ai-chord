@@ -7,6 +7,7 @@ import avatar from '../../assets/avatarNewVideo.mp4'
 import { FaCamera, FaPause, FaPlay, FaTimes, FaVolumeUp } from 'react-icons/fa';
 import './styles.css'
 import { useTransition, animated } from '@react-spring/web';
+import Button from "../../components/button/button"
 
 const chats = [
     { "title": "Explore HTML Game Development Tips" },
@@ -153,6 +154,17 @@ const index = () => {
                     profileImage={ProfilePhoto}
                 />
                 <div className="lg:w-[80%] h-[100%] w-[100%]  flex flex-col justify-between p-10 lg:p-20 items-center ">
+                    <div className="w-full flex items-end justify-end">
+                    <div  className="w-[18rem]">
+                         <Button
+                                 text="Chat with support"
+                                 icon=""
+                                 bgColor="bg-primary"
+                                 borderColor="none"
+                                 textColor="#fff"
+                             />
+                    </div>
+                    </div>
                     <div className="w-full h-[90%] pt-[1.2rem] md:h-[80%] bg- overflow-y-auto scrollbar-custom">
                     {transitions((styles, item, { key }) => (
                 <animated.div key={key} style={styles}>

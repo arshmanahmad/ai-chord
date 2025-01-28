@@ -19,7 +19,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
     return (
         <button
-            className={`flex items-center w-full md:h-[3rem] h-[2.5rem] rounded-[2rem] justify-center px-4 py-2 rounded border ${bgColor} ${borderColor}`}
+            className={`flex items-center w-full md:h-[3rem] h-[2.5rem] rounded-[2rem] justify-center px-4 py-2  border ${bgColor} ${borderColor}`}
             style={{ borderColor: borderColor, backgroundColor: bgColor }}
             onClick={onClick}
         >
