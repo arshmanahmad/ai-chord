@@ -161,7 +161,7 @@ const index = () => {
                                  icon=""
                                  bgColor="bg-primary"
                                  borderColor="none"
-                                 textColor="#fff"
+                                 textColor="#ffff"
                              />
                     </div>
                     </div>
